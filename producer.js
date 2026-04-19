@@ -15,7 +15,7 @@ async function init() {
 
 async function uploadVideo(req, res) {
     try {
-        const videoTask = { id: Math.floor(Math.random() * 1000), name: "user_video.mp4" };
+        const videoTask = { id: Math.floor(Math.random() * 1000), name: "user_video.mkv" };
         channel.sendToQueue('video_queue', Buffer.from(JSON.stringify(videoTask)));
         console.log(`[App Server] Sent task ${videoTask.id} to Broker.`);
         res.send(`<h1>YouTube Upload</h1><p>Video ${videoTask.id} is being processed!</p>`);
